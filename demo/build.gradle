@@ -1,0 +1,21 @@
+apply plugin: 'com.android.application'
+
+repositories {
+    maven {
+        url "https://s3.amazonaws.com/repo.commonsware.com"
+    }
+}
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 28
+    }
+}
+
+dependencies {
+    debugImplementation project(':layouts')
+    releaseImplementation 'com.commonsware.cwac:layouts:0.4.4'
+}
